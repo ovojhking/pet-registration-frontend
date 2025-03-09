@@ -12,6 +12,9 @@ export default {
             "primary-light": {
                 DEFAULT: "var(--primary-light-color)",
             },
+            "primary-dark": {
+                DEFAULT: "var(--primary-dark-color)",
+            },
           },
         },
     },

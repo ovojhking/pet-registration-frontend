@@ -1,12 +1,9 @@
 <script setup lang="ts">
-  import Header from '@/components/partials/Header.vue';
+    import Header from '@/components/partials/Header.vue';
 </script>
 <template>
   <Header />
-  <main class="">
-    <h1 class="text-3xl font-bold underline bg-blue-200">
-      Hello world!
-    </h1>
-    <Index />
+  <main class="min-h-[100vh] bg-gray-100 dark:bg-gray-800">
+    <RouterView />
   </main>
 </template>

@@ -1,0 +1,54 @@
+export const en = {
+    common: {
+        yes: 'Yes',
+        no: 'No',
+        switch_language: 'Français',
+    },
+    add_pet: {
+        title: 'Tell us about your pet',
+        choose_species: 'Select species:',
+        dog: 'Dog',
+        cat: 'Cat',
+        ask_name: "What is your pet\'s name?",
+        ask_breed: 'What breed are they?',
+        cannot_find_breed: "Can\'t find it?",
+        choose_breed: 'Choose one',
+        unknown: "I don\'t know",
+        mix: "It\'s a mix",
+        gender: 'What gender are they?',
+        male: 'Male',
+        female: 'Female',
+        ask_birth: 'Do you know their date of birth?',
+        approximate_age: 'Approximate Age',
+        year: 'Year',
+        month: 'Month',
+        day: 'Day',
+        continue: 'Continue',
+        save: 'Save',
+        cancel: 'Cancel',
+        submit: 'Submit',
+    },
+    breeds:{
+        cat: {
+            'persian': 'Persian',
+            'maine_coon': 'Maine Coon',
+            'siamese': 'Siamese',
+            'ragdoll': 'Ragdoll',
+            'bengal': 'Bengal'
+        },
+        dog: {
+            'labrador_retriever': 'Labrador Retriever',
+            'german_shepherd': 'German Shepherd',
+            'golden_retriever': 'Golden Retriever',
+            'french_bulldog': 'French Bulldog',
+            'bulldog': 'Bulldog',
+            'poodle': 'Poodle',
+            'beagle': 'Beagle',
+            'rottweiler': 'Rottweiler',
+            'dachshund': 'Dachshund',
+            'siberian_husky': 'Siberian Husky',
+            'pitbull': 'Pitbull',
+            'mastiff': 'Mastiff'
+        }
+    }
+};

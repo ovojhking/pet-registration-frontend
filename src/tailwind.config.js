@@ -4,7 +4,14 @@ import primeui from 'tailwindcss-primeui';
 export default {
     content: ['./index.html', './src/**/*.{vue,js,ts}'],
     theme: {
-        extend: {}
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: "var(--primary-color)", // 讓 Tailwind 讀取 PrimeVue 的變數
+            },
+          },
+        },
     },
-    plugins: [primeui]
+    plugins: [primeui],
+    darkMode: "class"
 };

@@ -7,7 +7,10 @@ export default {
         extend: {
           colors: {
             primary: {
-              DEFAULT: "var(--primary-color)", // 讓 Tailwind 讀取 PrimeVue 的變數
+                DEFAULT: "var(--primary-color)",
+            },
+            "primary-light": {
+                DEFAULT: "var(--primary-light-color)",
             },
           },
         },

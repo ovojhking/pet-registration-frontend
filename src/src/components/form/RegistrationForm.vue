@@ -1,13 +1,17 @@
 <script setup lang="ts">
     import moment from 'moment';
     import {Axios} from '@/utils/Axios';
+    import { useNavigation } from '@/utils/useNavigation';
     import { onMounted, ref, watch, computed   } from 'vue';
     import { useRoute } from 'vue-router';
     import Card from '@/components/form/Card.vue';
     import { useI18n } from 'vue-i18n';
     import {FloatLabel, InputText, Select, Message, RadioButton, Button, InputNumber, DatePicker, Toast } from 'primevue';
     import { useToast } from "primevue/usetoast";
-    
+    import { usePetStore } from '@/stores/usePetStore';
+
+    const petStore = usePetStore();
+    const { navigateToRoute } = useNavigation();
     const toast = useToast();
     const axios = new Axios();
     const { t } = useI18n();
@@ -114,12 +118,15 @@
             axios.post('pets', body)
                 .then((response) => {
                     submiting.value = false;
+
+                    petStore.setPetRegister({...response.body});
+
+                    navigateToRoute('register-success');
                 })
                 .catch((error) => {
                     submiting.value = false;
                     toast.add({ severity: 'error', summary: 'Fetch Error', detail: error, life: 3000 });
                 });
-
         }
     };
 
@@ -304,7 +311,7 @@
                     <InputNumber v-model="petForm.approximateAge" inputId="minmax-buttons" mode="decimal" showButtons :min="0" :max="100" fluid />
                 </template>
             
-                <Button type="submit" :label="t('add_pet.submit')" icon="pi pi-check" class="w-full bg-primary hover:bg-primary" :loading="submiting"/>
+                <Button type="submit" :label="t('add_pet.submit')" icon="pi pi-check" class="w-full bg-primary hover:bg-primary" style="margin-top: 40px;" :loading="submiting"/>
             </form>
         </template>
     </Card>

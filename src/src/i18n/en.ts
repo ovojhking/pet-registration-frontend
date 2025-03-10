@@ -4,6 +4,8 @@ export const en = {
         no: 'No',
         switch_language: 'Français',
         loading: 'Loading ...',
+        success: 'Success',
+        error: 'Error',
     },
     add_pet: {
         title: 'Tell us about your pet',
@@ -58,5 +60,15 @@ export const en = {
         selectedBreed: "Please select a breed",
         customBreed: "This is required",
         birth: "Birth date is required and must be today or earlier"
+    },
+    register_success:{
+        greeting: 'Your pet has been successfully registered.',
+        check: 'Please check the information below.',
+        name: 'Name:',
+        type: 'Type:',
+        breed: 'Breed:',
+        birth: 'Date of Birth:',
+        age: 'Age:',
+        dangerous: 'Dangerous:',
     }
 };

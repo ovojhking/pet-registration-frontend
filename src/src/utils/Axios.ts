@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
-import { HttpResponse, Payload } from './Axios.defs';
+import { HttpResponse, Payload } from './types/Axios';
 
 export class Axios {
     private axiosInstance: AxiosInstance;

@@ -4,6 +4,8 @@ export const fr = {
         no: 'Non',
         switch_language: 'English',
         loading: 'Chargement ...',
+        success: 'Succès',
+        error: 'Erreur',
     },
     add_pet: {
         title: 'Parlez-nous de votre animal de compagnie',
@@ -58,5 +60,15 @@ export const fr = {
         selectedBreed: "Veuillez sélectionner une race",
         customBreed: "Ceci est requis",
         birth: "La date de naissance est requise et doit être aujourd'hui ou avant"
+    },
+    register_success: {
+        greeting: "Votre animal a été enregistré avec succès.",
+        check: "Veuillez vérifier les informations ci-dessous.",
+        name: "Nom :",
+        type: "Type :",
+        breed: "Race :",
+        birth: "Date de naissance :",
+        age: "Âge :",
+        dangerous: "Dangereux :"
     }
 };

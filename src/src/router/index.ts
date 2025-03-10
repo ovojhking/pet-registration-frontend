@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Second from '@/views/Second.vue';
+import RegisterSuccess from '@/views/RegisterSuccess.vue';
 import i18n from '@/i18n/index';
 import Index from '@/views/Index.vue';
 
@@ -9,9 +9,9 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/:locale(fr|en)/2',
-            name: 'second',
-            component: Second
+            path: '/:locale(fr|en)/register-success',
+            name: 'register-success',
+            component: RegisterSuccess
         },
         {
             path: '/:locale(fr|en)',

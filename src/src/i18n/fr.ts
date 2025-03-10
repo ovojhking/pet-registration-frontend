@@ -3,6 +3,7 @@ export const fr = {
         yes: 'Oui',
         no: 'Non',
         switch_language: 'English',
+        loading: 'Chargement ...',
     },
     add_pet: {
         title: 'Parlez-nous de votre animal de compagnie',
@@ -20,13 +21,12 @@ export const fr = {
         female: 'Femelle',
         ask_birth: 'Connaissez-vous sa date de naissance ?',
         approximate_age: 'Âge approximatif',
-        year: 'Année',
-        month: 'Mois',
-        day: 'Jour',
+        birth: 'Date de naissance',        
         continue: 'Continuer',
         save: 'Enregistrer',
         cancel: 'Annuler',
         submit: 'Soumettre',
+        breed_placeholder: 'Sélectionnez une race',
     },
     breeds: {
         cat: {
@@ -34,7 +34,8 @@ export const fr = {
             'maine_coon': 'Maine Coon',
             'siamese': 'Siamois',
             'ragdoll': 'Ragdoll',
-            'bengal': 'Bengal'
+            'bengal': 'Bengal',
+            'unknow': 'Impossible de le trouver ?'
         },
         dog: {
             'labrador_retriever': 'Labrador Retriever',
@@ -48,7 +49,8 @@ export const fr = {
             'dachshund': 'Teckel',
             'siberian_husky': 'Husky Sibérien',
             'pitbull': 'Pitbull',
-            'mastiff': 'Mastiff'
+            'mastiff': 'Mastiff',
+            'unknow': 'Impossible de le trouver ?'
         }
     }    
 

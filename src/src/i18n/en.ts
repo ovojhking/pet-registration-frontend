@@ -3,6 +3,7 @@ export const en = {
         yes: 'Yes',
         no: 'No',
         switch_language: 'Français',
+        loading: 'Loading ...',
     },
     add_pet: {
         title: 'Tell us about your pet',
@@ -20,13 +21,12 @@ export const en = {
         female: 'Female',
         ask_birth: 'Do you know their date of birth?',
         approximate_age: 'Approximate Age',
-        year: 'Year',
-        month: 'Month',
-        day: 'Day',
+        birth: 'Date of Birth',
         continue: 'Continue',
         save: 'Save',
         cancel: 'Cancel',
         submit: 'Submit',
+        breed_placeholder: 'Select a breed',
     },
     breeds:{
         cat: {
@@ -34,7 +34,8 @@ export const en = {
             'maine_coon': 'Maine Coon',
             'siamese': 'Siamese',
             'ragdoll': 'Ragdoll',
-            'bengal': 'Bengal'
+            'bengal': 'Bengal',
+            'unknow': 'Can\'t find it?'
         },
         dog: {
             'labrador_retriever': 'Labrador Retriever',
@@ -48,7 +49,8 @@ export const en = {
             'dachshund': 'Dachshund',
             'siberian_husky': 'Siberian Husky',
             'pitbull': 'Pitbull',
-            'mastiff': 'Mastiff'
+            'mastiff': 'Mastiff',
+            'unknow': 'Can\'t find it?'
         }
     }
 };

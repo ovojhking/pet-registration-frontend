@@ -3,6 +3,7 @@
   --primary-dark-color: #003c71 !important;
   --primary-light-color: #f0f4ff !important;
   --primary-text-color: #003c71 !important;
+  --primary-hover-color: #003c71  !important;
 }
 
 .dark {
@@ -10,4 +11,5 @@
   --primary-dark-color: #002855 !important;
   --primary-light-color: #1E2A40 !important;
   --primary-text-color: #A5D8FF !important;
+  --primary-hover-color: #82CAF0 !important;
 }

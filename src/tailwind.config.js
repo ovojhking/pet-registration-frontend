@@ -8,6 +8,7 @@ export default {
           colors: {
             primary: {
                 DEFAULT: "var(--primary-color)",
+                dark: "#003c71",
             },
             "primary-light": {
                 DEFAULT: "var(--primary-light-color)",

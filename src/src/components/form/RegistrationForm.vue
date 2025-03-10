@@ -2,11 +2,11 @@
     import moment from 'moment';
     import {Axios} from '@/utils/Axios';
     import { useNavigation } from '@/utils/useNavigation';
-    import { onMounted, ref, watch, computed   } from 'vue';
+    import { onMounted, ref, watch, computed } from 'vue';
     import { useRoute } from 'vue-router';
     import Card from '@/components/form/Card.vue';
     import { useI18n } from 'vue-i18n';
-    import {FloatLabel, InputText, Select, Message, RadioButton, Button, InputNumber, DatePicker, Toast } from 'primevue';
+    import {InputText, Select, Message, RadioButton, Button, InputNumber, DatePicker, Toast } from 'primevue';
     import { useToast } from "primevue/usetoast";
     import { usePetStore } from '@/stores/usePetStore';
 
@@ -311,7 +311,7 @@
                     <InputNumber v-model="petForm.approximateAge" inputId="minmax-buttons" mode="decimal" showButtons :min="0" :max="100" fluid />
                 </template>
             
-                <Button type="submit" :label="t('add_pet.submit')" icon="pi pi-check" class="w-full bg-primary hover:bg-primary" style="margin-top: 40px;" :loading="submiting"/>
+                <Button type="submit" :label="t('add_pet.submit')" icon="pi pi-check" class="w-full bg-primary hover:bg-primary" style="margin-top: 40px; color: white;" :loading="submiting"/>
             </form>
         </template>
     </Card>

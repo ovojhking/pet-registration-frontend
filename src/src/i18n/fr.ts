@@ -52,6 +52,11 @@ export const fr = {
             'mastiff': 'Mastiff',
             'unknow': 'Impossible de le trouver ?'
         }
-    }    
-
+    },
+    error_msg: {
+        petName: "Le nom de l'animal est requis",
+        selectedBreed: "Veuillez sélectionner une race",
+        customBreed: "Ceci est requis",
+        birth: "La date de naissance est requise et doit être aujourd'hui ou avant"
+    }
 };

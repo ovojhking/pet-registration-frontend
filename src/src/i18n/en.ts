@@ -52,5 +52,11 @@ export const en = {
             'mastiff': 'Mastiff',
             'unknow': 'Can\'t find it?'
         }
+    },
+    error_msg:{
+        petName: "Pet name is required",
+        selectedBreed: "Please select a breed",
+        customBreed: "This is required",
+        birth: "Birth date is required and must be today or earlier"
     }
 };

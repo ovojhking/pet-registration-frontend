@@ -34,20 +34,19 @@
     const formFields = ref({
         petName: {
             isInvalid: false,
-            errorMessage: "Pet name is required",
+            errorMessage: "error_msg.petName",
             validateRule: (value) => value !== ""
         },
         selectedBreed: {
             isInvalid: false,
-            errorMessage: "Please select a breed",
+            errorMessage: "error_msg.selectedBreed",
             validateRule: (value) => {
-                console.log('value', value);
                 return Object.keys(value).length > 0
             }
         },
         customBreed: {
             isInvalid: false,
-            errorMessage: "This is required",
+            errorMessage: "error_msg.customBreed",
             validateRule: (value) => {
                 if (petForm.value.isMix) {
                     return value !== "";
@@ -57,7 +56,7 @@
         },
         birth: {
             isInvalid: false,
-            errorMessage: "Birth date is required and must be today or earlier",
+            errorMessage: "error_msg.birth",
             validateRule: (value) => {
                 if (!petForm.value.isKnowBirth) return true;
                 return value && moment(value).isSameOrBefore(moment(), 'day');
@@ -114,7 +113,6 @@
             submiting.value = true;
             axios.post('pets', body)
                 .then((response) => {
-                    console.log('response', response);
                     submiting.value = false;
                 })
                 .catch((error) => {
@@ -168,30 +166,32 @@
     <Card :title="t('add_pet.title')">
         <template #content>
             <form @submit.prevent="submitForm" class="space-y-4">
-                <label class="block text-sm font-medium text-[12px]">What kind of pet do you have?</label>
-                <div class="flex space-x-2" style="margin-top: 5px;">
-                    <button
-                        type="button"
-                        @click="petForm.petType = 'dog'"
-                        class="p-0 border w-1/2 h-[30px] text-[12px]"
-                        style="border-radius: 10px 0 0 10px;"
-                        :class="petForm.petType === 'dog' ? 'border-primary bg-primary text-white' : 'border-primary text-primary'"
-                    >
-                        {{ t('add_pet.dog') }}
-                    </button>
-                    <button
-                        type="button"
-                        @click="petForm.petType = 'cat'"
-                        class="p-0 border w-1/2 h-[30px] ml-0 text-[12px]"
-                        style="border-radius: 0px 10px 10px 0px; margin-left: 0px;"
-                        :class="petForm.petType === 'cat' ? 'border-primary bg-primary text-white' : 'border-primary text-primary'"
-                    >
-                        {{ t('add_pet.cat') }}
-                    </button>
+                <div class="flex items-center justify-between">
+                    <label class="block text-sm font-medium text-[12px]">{{t('add_pet.choose_species')}}</label>
+                    <div class="flex mt-[5px] w-[95px] md:w-[140px]">
+                        <button
+                            type="button"
+                            @click="petForm.petType = 'dog'"
+                            class="p-0 border w-1/2 h-[30px] text-[12px]"
+                            style="border-radius: 10px 0 0 10px;"
+                            :class="petForm.petType === 'dog' ? 'border-primary bg-primary text-white' : 'border-primary text-primary'"
+                        >
+                            {{ t('add_pet.dog') }}
+                        </button>
+                        <button
+                            type="button"
+                            @click="petForm.petType = 'cat'"
+                            class="p-0 border w-1/2 h-[30px] ml-0 text-[12px]"
+                            style="border-radius: 0px 10px 10px 0px; margin-left: 0px;"
+                            :class="petForm.petType === 'cat' ? 'border-primary bg-primary text-white' : 'border-primary text-primary'"
+                        >
+                            {{ t('add_pet.cat') }}
+                        </button>
+                    </div>
                 </div>
 
                 
-                <label class="block text-sm font-medium" style="margin-top: 25px;">Pet Name</label>
+                <label class="block text-sm font-medium" style="margin-top: 25px;">{{t('add_pet.ask_name')}}</label>
                 <InputText
                     v-model="petForm.petName"
                     :invalid="formFields.petName.isInvalid"
@@ -199,10 +199,10 @@
                     class="w-full"
                 />
                 <Message v-if="formFields.petName.isInvalid" severity="error" size="small" variant="simple">
-                    {{ formFields.petName.errorMessage }}
+                    {{ t(formFields.petName.errorMessage) }}
                 </Message>
 
-                <label class="block text-sm font-medium">Breed</label>
+                <label class="block text-sm font-medium">{{t('add_pet.ask_breed')}}</label>
                 <Select
                     v-model="petForm.selectedBreed"
                     :options="breedOptions"
@@ -214,7 +214,7 @@
                     :disabled="loading"
                 />
                 <Message v-if="formFields.selectedBreed.isInvalid" severity="error" size="small" variant="simple">
-                    {{ formFields.selectedBreed.errorMessage }}
+                    {{ t(formFields.selectedBreed.errorMessage) }}
                 </Message>
 
                 <div class="flex flex-col gap-2"  v-if="petForm.selectedBreed && petForm.selectedBreed.name === 'unknow'">
@@ -237,7 +237,7 @@
                             :invalid="formFields.customBreed.isInvalid"
                         />
                         <Message v-if="formFields.customBreed.isInvalid" severity="error" size="small" variant="simple">
-                            {{ formFields.customBreed.errorMessage }}
+                            {{ t(formFields.customBreed.errorMessage) }}
                         </Message>
                     </template>
                 </div>
@@ -245,6 +245,7 @@
                 <label class="block text-sm font-medium text-[12px]">{{t('add_pet.gender')}}</label>
                 <div class="flex space-x-2" style="margin-top: 5px;">
                     <button
+                        type="button"
                         @click="petForm.gender = 'male'"
                         class="p-0 border w-1/2 h-[30px] text-[12px]"
                         style="border-radius: 10px 0 0 10px;"
@@ -253,6 +254,7 @@
                         {{ t('add_pet.male') }}
                     </button>
                     <button
+                        type="button"
                         @click="petForm.gender = 'female'"
                         class="p-0 border w-1/2 h-[30px] ml-0 text-[12px]"
                         style="border-radius: 0px 10px 10px 0px; margin-left: 0px;"
@@ -265,6 +267,7 @@
                 <label class="block text-sm font-medium text-[12px]">{{t('add_pet.ask_birth')}}</label>
                 <div class="flex space-x-2" style="margin-top: 5px;">
                     <button
+                        type="button"
                         @click="petForm.isKnowBirth = true"
                         class="p-0 border w-1/2 h-[30px] text-[12px]"
                         style="border-radius: 10px 0 0 10px;"
@@ -273,6 +276,7 @@
                         {{ t('common.yes') }}
                     </button>
                     <button
+                        type="button"
                         @click="petForm.isKnowBirth = false"
                         class="p-0 border w-1/2 h-[30px] ml-0 text-[12px]"
                         style="border-radius: 0px 10px 10px 0px; margin-left: 0px;"
@@ -292,7 +296,7 @@
                         :invalid="formFields.birth.isInvalid"
                     />
                     <Message v-if="formFields.birth.isInvalid" severity="error" size="small" variant="simple">
-                        {{ formFields.birth.errorMessage }}
+                        {{ t(formFields.birth.errorMessage) }}
                     </Message>
                 </template>
                 <template v-else>
@@ -300,7 +304,7 @@
                     <InputNumber v-model="petForm.approximateAge" inputId="minmax-buttons" mode="decimal" showButtons :min="0" :max="100" fluid />
                 </template>
             
-                <Button type="submit" class="w-full" style="margin-top: 45px">Submit</Button>
+                <Button type="submit" :label="t('add_pet.submit')" icon="pi pi-check" class="w-full bg-primary hover:bg-primary" :loading="submiting"/>
             </form>
         </template>
     </Card>

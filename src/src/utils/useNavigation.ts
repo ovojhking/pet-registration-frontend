@@ -4,11 +4,8 @@ import i18n from '@/i18n/index';
 export function useNavigation() {
     const currentRoute = useRoute();
     const router = useRouter();
-    console.log('init router: ', router)
-
 
     function getOtherLanguage(): 'en' | 'fr' {
-        console.log('aabb')
         switch (i18n.global.locale.value) {
             case 'en':
                 return 'fr';
@@ -30,8 +27,6 @@ export function useNavigation() {
     }
 
     function switchLanguage(): void {
-        console.log('router: ', router)
-
         router.push({
             name: currentRoute.name,
             params: {

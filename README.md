@@ -39,7 +39,7 @@ Open a terminal and run the following command to navigate to the `docker` direct
 
 ```bash=
   npm install
-  npm run dev
+  npm run dev -- --host --port 3000
 ```
 
 It will be executed on **localhost:4000** after starting.

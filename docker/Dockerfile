@@ -15,7 +15,7 @@ COPY ../src ./
 EXPOSE 3000
 
 # CMD ["npm", "run", "dev", "--", "--host", "--port", "3000"]
-COPY ./docker/entrypoint.sh /
-RUN chmod +x /entrypoint.sh
+# COPY ./docker/entrypoint.sh /
+# RUN chmod +x /entrypoint.sh
 
-CMD ["/entrypoint.sh"]
+# CMD ["/entrypoint.sh"]

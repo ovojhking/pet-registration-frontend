@@ -32,6 +32,14 @@ Open a terminal and run the following command to navigate to the `docker` direct
 ```bash=
     cd docker
     docker-compose up --build -d
+    docker exec -it pet_frontend_dev sh
+```
+
+### Step 2: Enter the Docker container and run the project
+
+```bash=
+  npm install
+  npm run dev
 ```
 
 It will be executed on **localhost:4000** after starting.
